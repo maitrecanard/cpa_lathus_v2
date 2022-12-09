@@ -1,0 +1,67 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="681px" height="677px" viewBox="-0.5 -0.5 681 677" content="&lt;mxfile&gt;&lt;diagram id=&quot;x2KCUkceFkSHKt202BJz&quot; name=&quot;Page-1&quot;&gt;zZXBbqMwEIafBvW0UsCEJMeGdncPW6lSVt2zBROwajzImEL69DsGAyG0Ug/ZVU4efx6PZ/4ZhMfiov2heZk/YQrSC1Zp67EHLwj8TbijxZJTT3Y+60GmReqcJnAQ7+DgytFapFDNHA2iNKKcwwSVgsTMGNcam7nbEeX81ZJnsACHhMsl/SNSk/d0G2wm/hNElg8v+5EruOCDs6ukynmKzRlijx6LNaLpraKNQVrxBl36e98/OR0T06DMVy4E/YU3LmtXmxdEkq7uc4oVZdaKn+/J5RelXldkvIwuFHbyGmA5XkOVQGkEKtvpu9oumRcz736n+kVzA7W2p2BzEFVt52SMXU6hO6nMadDfQNulaApJwCezMhpfIUaJmohCRZ77o5DyAlUlT4TKCKyn3W8sCXwjqdi+yYWBA3H7VEPjSwzfQB9l16ZcpCkoYhprlYJVcTVmSG6U2aed8Mf+0ocBWIDRJ3Jp57N9mm+bab6C0LH8bLa2jnE30tkYeOo6Ga7xHw8BWwzBC1UiaN6JUhsNFwr0ogtVIwrJO1mvUH94Uf86Wgjgrz8QIFhdQYH1TSiwu5AgXEowVnt1CaJbkIDNFQij/6nA5hYUCLcXEmz+oQS0nX413dnZD5s9/gU=&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="0" y="10" width="240" height="80" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 232px; height: 1px; padding-top: 0px; margin-left: 5px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; max-height: 90px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <h1>
+                                    CPA Lathus V2
+                                </h1>
+                                <p>
+                                    Conception d'un générateur de visuel
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="5" y="12" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px">
+                    CPA Lathus V2...
+                </text>
+            </switch>
+        </g>
+        <path d="M 30 179 L 30 156 L 180 156 L 180 179" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 30 179 L 30 356 L 180 356 L 180 179" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 30 179 L 180 179" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="rgb(0, 0, 0)" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="104.5" y="172">
+                Vertical Container
+            </text>
+        </g>
+        <path d="M 480 169 L 480 146 L 680 146 L 680 169" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 480 169 L 480 346 L 680 346 L 680 169" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 480 169 L 680 169" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="rgb(0, 0, 0)" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="579.5" y="162">
+                Vertical Container
+            </text>
+        </g>
+        <path d="M 20 489 L 20 466 L 220 466 L 220 489" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 20 489 L 20 666 L 220 666 L 220 489" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 20 489 L 220 489" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="rgb(0, 0, 0)" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="119.5" y="482">
+                Vertical Container
+            </text>
+        </g>
+        <path d="M 470 499 L 470 476 L 670 476 L 670 499" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 470 499 L 470 676 L 670 676 L 670 499" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 470 499 L 670 499" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="rgb(0, 0, 0)" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="569.5" y="492">
+                Vertical Container
+            </text>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Viewer does not support full SVG 1.1
+            </text>
+        </a>
+    </switch>
+</svg>
