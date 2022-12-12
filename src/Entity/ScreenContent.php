@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ScreenContentRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -49,6 +51,18 @@ class ScreenContent
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $value10 = null;
+
+    #[ORM\ManyToOne(inversedBy: 'screenContents')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?ScreenParam $screenParam = null;
+
+    #[ORM\OneToMany(mappedBy: 'screenContent', targetEntity: ScreenMovement::class)]
+    private Collection $screenMovements;
+
+    public function __construct()
+    {
+        $this->screenMovements = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -195,6 +209,48 @@ class ScreenContent
     public function setValue10(?string $value10): self
     {
         $this->value10 = $value10;
+
+        return $this;
+    }
+
+    public function getScreenParam(): ?ScreenParam
+    {
+        return $this->screenParam;
+    }
+
+    public function setScreenParam(?ScreenParam $screenParam): self
+    {
+        $this->screenParam = $screenParam;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ScreenMovement>
+     */
+    public function getScreenMovements(): Collection
+    {
+        return $this->screenMovements;
+    }
+
+    public function addScreenMovement(ScreenMovement $screenMovement): self
+    {
+        if (!$this->screenMovements->contains($screenMovement)) {
+            $this->screenMovements->add($screenMovement);
+            $screenMovement->setScreenContent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeScreenMovement(ScreenMovement $screenMovement): self
+    {
+        if ($this->screenMovements->removeElement($screenMovement)) {
+            // set the owning side to null (unless already changed)
+            if ($screenMovement->getScreenContent() === $this) {
+                $screenMovement->setScreenContent(null);
+            }
+        }
 
         return $this;
     }

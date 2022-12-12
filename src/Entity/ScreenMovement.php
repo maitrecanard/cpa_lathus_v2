@@ -19,6 +19,13 @@ class ScreenMovement
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'screenMovements')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
+    #[ORM\ManyToOne(inversedBy: 'screenMovements')]
+    private ?ScreenContent $screenContent = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +51,30 @@ class ScreenMovement
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getScreenContent(): ?ScreenContent
+    {
+        return $this->screenContent;
+    }
+
+    public function setScreenContent(?ScreenContent $screenContent): self
+    {
+        $this->screenContent = $screenContent;
 
         return $this;
     }

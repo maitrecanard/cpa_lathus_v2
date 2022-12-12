@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScreenContent index{% endblock %}
+
+{% block body %}
+    <h1>ScreenContent index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Value1</th>
+                <th>Value2</th>
+                <th>Value3</th>
+                <th>Value4</th>
+                <th>Value5</th>
+                <th>Value6</th>
+                <th>Value7</th>
+                <th>Value8</th>
+                <th>Value9</th>
+                <th>Value10</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for screen_content in screen_contents %}
+            <tr>
+                <td>{{ screen_content.id }}</td>
+                <td>{{ screen_content.title }}</td>
+                <td>{{ screen_content.content }}</td>
+                <td>{{ screen_content.value1 }}</td>
+                <td>{{ screen_content.value2 }}</td>
+                <td>{{ screen_content.value3 }}</td>
+                <td>{{ screen_content.value4 }}</td>
+                <td>{{ screen_content.value5 }}</td>
+                <td>{{ screen_content.value6 }}</td>
+                <td>{{ screen_content.value7 }}</td>
+                <td>{{ screen_content.value8 }}</td>
+                <td>{{ screen_content.value9 }}</td>
+                <td>{{ screen_content.value10 }}</td>
+                <td>
+                    <a href="{{ path('app_back_screen_content_show', {'id': screen_content.id}) }}">show</a>
+                    <a href="{{ path('app_back_screen_content_edit', {'id': screen_content.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_screen_content_new') }}">Create new</a>
+{% endblock %}

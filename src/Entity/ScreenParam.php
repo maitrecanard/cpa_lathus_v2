@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ScreenParamRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -55,6 +57,14 @@ class ScreenParam
 
     #[ORM\Column(nullable: true)]
     private ?int $active = null;
+
+    #[ORM\OneToMany(mappedBy: 'screenParam', targetEntity: ScreenContent::class, orphanRemoval: true)]
+    private Collection $screenContents;
+
+    public function __construct()
+    {
+        $this->screenContents = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -225,6 +235,36 @@ class ScreenParam
     public function setActive(?int $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ScreenContent>
+     */
+    public function getScreenContents(): Collection
+    {
+        return $this->screenContents;
+    }
+
+    public function addScreenContent(ScreenContent $screenContent): self
+    {
+        if (!$this->screenContents->contains($screenContent)) {
+            $this->screenContents->add($screenContent);
+            $screenContent->setScreenParam($this);
+        }
+
+        return $this;
+    }
+
+    public function removeScreenContent(ScreenContent $screenContent): self
+    {
+        if ($this->screenContents->removeElement($screenContent)) {
+            // set the owning side to null (unless already changed)
+            if ($screenContent->getScreenParam() === $this) {
+                $screenContent->setScreenParam(null);
+            }
+        }
 
         return $this;
     }
