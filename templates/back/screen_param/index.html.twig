@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScreenParam index{% endblock %}
+
+{% block body %}
+    <h1>ScreenParam index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Setting1</th>
+                <th>Setting2</th>
+                <th>Setting3</th>
+                <th>Setting4</th>
+                <th>Setting5</th>
+                <th>Setting6</th>
+                <th>Setting7</th>
+                <th>Setting8</th>
+                <th>Setting9</th>
+                <th>Setting10</th>
+                <th>Active</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for screen_param in screen_params %}
+            <tr>
+                <td>{{ screen_param.id }}</td>
+                <td>{{ screen_param.name }}</td>
+                <td>{{ screen_param.description }}</td>
+                <td>{{ screen_param.image }}</td>
+                <td>{{ screen_param.setting1 }}</td>
+                <td>{{ screen_param.setting2 }}</td>
+                <td>{{ screen_param.setting3 }}</td>
+                <td>{{ screen_param.setting4 }}</td>
+                <td>{{ screen_param.setting5 }}</td>
+                <td>{{ screen_param.setting6 }}</td>
+                <td>{{ screen_param.setting7 }}</td>
+                <td>{{ screen_param.setting8 }}</td>
+                <td>{{ screen_param.setting9 }}</td>
+                <td>{{ screen_param.setting10 }}</td>
+                <td>{{ screen_param.active }}</td>
+                <td>
+                    <a href="{{ path('app_back_screen_param_show', {'id': screen_param.id}) }}">show</a>
+                    <a href="{{ path('app_back_screen_param_edit', {'id': screen_param.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="16">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_screen_param_new') }}">Create new</a>
+{% endblock %}

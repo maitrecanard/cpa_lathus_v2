@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScreenParam{% endblock %}
+
+{% block body %}
+    <h1>ScreenParam</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ screen_param.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ screen_param.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ screen_param.description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ screen_param.image }}</td>
+            </tr>
+            <tr>
+                <th>Setting1</th>
+                <td>{{ screen_param.setting1 }}</td>
+            </tr>
+            <tr>
+                <th>Setting2</th>
+                <td>{{ screen_param.setting2 }}</td>
+            </tr>
+            <tr>
+                <th>Setting3</th>
+                <td>{{ screen_param.setting3 }}</td>
+            </tr>
+            <tr>
+                <th>Setting4</th>
+                <td>{{ screen_param.setting4 }}</td>
+            </tr>
+            <tr>
+                <th>Setting5</th>
+                <td>{{ screen_param.setting5 }}</td>
+            </tr>
+            <tr>
+                <th>Setting6</th>
+                <td>{{ screen_param.setting6 }}</td>
+            </tr>
+            <tr>
+                <th>Setting7</th>
+                <td>{{ screen_param.setting7 }}</td>
+            </tr>
+            <tr>
+                <th>Setting8</th>
+                <td>{{ screen_param.setting8 }}</td>
+            </tr>
+            <tr>
+                <th>Setting9</th>
+                <td>{{ screen_param.setting9 }}</td>
+            </tr>
+            <tr>
+                <th>Setting10</th>
+                <td>{{ screen_param.setting10 }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{{ screen_param.active }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_screen_param_index') }}">back to list</a>
+
+    <a href="{{ path('app_back_screen_param_edit', {'id': screen_param.id}) }}">edit</a>
+
+    {{ include('back/screen_param/_delete_form.html.twig') }}
+{% endblock %}

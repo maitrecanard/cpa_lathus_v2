@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ScreenContent{% endblock %}
+
+{% block body %}
+    <h1>ScreenContent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ screen_content.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ screen_content.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ screen_content.content }}</td>
+            </tr>
+            <tr>
+                <th>Value1</th>
+                <td>{{ screen_content.value1 }}</td>
+            </tr>
+            <tr>
+                <th>Value2</th>
+                <td>{{ screen_content.value2 }}</td>
+            </tr>
+            <tr>
+                <th>Value3</th>
+                <td>{{ screen_content.value3 }}</td>
+            </tr>
+            <tr>
+                <th>Value4</th>
+                <td>{{ screen_content.value4 }}</td>
+            </tr>
+            <tr>
+                <th>Value5</th>
+                <td>{{ screen_content.value5 }}</td>
+            </tr>
+            <tr>
+                <th>Value6</th>
+                <td>{{ screen_content.value6 }}</td>
+            </tr>
+            <tr>
+                <th>Value7</th>
+                <td>{{ screen_content.value7 }}</td>
+            </tr>
+            <tr>
+                <th>Value8</th>
+                <td>{{ screen_content.value8 }}</td>
+            </tr>
+            <tr>
+                <th>Value9</th>
+                <td>{{ screen_content.value9 }}</td>
+            </tr>
+            <tr>
+                <th>Value10</th>
+                <td>{{ screen_content.value10 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_back_screen_content_index') }}">back to list</a>
+
+    <a href="{{ path('app_back_screen_content_edit', {'id': screen_content.id}) }}">edit</a>
+
+    {{ include('back/screen_content/_delete_form.html.twig') }}
+{% endblock %}
