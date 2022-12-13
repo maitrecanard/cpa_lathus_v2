@@ -10,10 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/back/screen/param')]
+#[Route('/admin')]
 class ScreenParamController extends AbstractController
 {
-    #[Route('/', name: 'app_back_screen_param_index', methods: ['GET'])]
+    #[Route('/screenparam', name: 'app_back_screen_param_index', methods: ['GET'])]
     public function index(ScreenParamRepository $screenParamRepository): Response
     {
         return $this->render('back/screen_param/index.html.twig', [
@@ -21,7 +21,7 @@ class ScreenParamController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_back_screen_param_new', methods: ['GET', 'POST'])]
+    #[Route('/screenparam/new', name: 'app_back_screen_param_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ScreenParamRepository $screenParamRepository): Response
     {
         $screenParam = new ScreenParam();
@@ -40,7 +40,7 @@ class ScreenParamController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_back_screen_param_show', methods: ['GET'])]
+    #[Route('/screenparam/{id}', name: 'app_back_screen_param_show', methods: ['GET'])]
     public function show(ScreenParam $screenParam): Response
     {
         return $this->render('back/screen_param/show.html.twig', [
@@ -48,7 +48,7 @@ class ScreenParamController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_back_screen_param_edit', methods: ['GET', 'POST'])]
+    #[Route('/screenparam/{id}/edit', name: 'app_back_screen_param_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, ScreenParam $screenParam, ScreenParamRepository $screenParamRepository): Response
     {
         $form = $this->createForm(ScreenParamType::class, $screenParam);
@@ -66,7 +66,7 @@ class ScreenParamController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_back_screen_param_delete', methods: ['POST'])]
+    #[Route('/screenparam/{id}/delete', name: 'app_back_screen_param_delete', methods: ['POST'])]
     public function delete(Request $request, ScreenParam $screenParam, ScreenParamRepository $screenParamRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$screenParam->getId(), $request->request->get('_token'))) {

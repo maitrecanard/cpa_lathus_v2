@@ -10,10 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/back/screen/content')]
+#[Route('/admin')]
 class ScreenContentController extends AbstractController
 {
-    #[Route('/', name: 'app_back_screen_content_index', methods: ['GET'])]
+    #[Route('/screencontent', name: 'app_back_screen_content_index', methods: ['GET'])]
     public function index(ScreenContentRepository $screenContentRepository): Response
     {
         return $this->render('back/screen_content/index.html.twig', [
@@ -21,7 +21,7 @@ class ScreenContentController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_back_screen_content_new', methods: ['GET', 'POST'])]
+    #[Route('/screencontent/new', name: 'app_back_screen_content_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ScreenContentRepository $screenContentRepository): Response
     {
         $screenContent = new ScreenContent();
@@ -40,7 +40,7 @@ class ScreenContentController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_back_screen_content_show', methods: ['GET'])]
+    #[Route('/screencontent/{id}', name: 'app_back_screen_content_show', methods: ['GET'])]
     public function show(ScreenContent $screenContent): Response
     {
         return $this->render('back/screen_content/show.html.twig', [
@@ -48,7 +48,7 @@ class ScreenContentController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_back_screen_content_edit', methods: ['GET', 'POST'])]
+    #[Route('/screencontent/{id}/edit', name: 'app_back_screen_content_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, ScreenContent $screenContent, ScreenContentRepository $screenContentRepository): Response
     {
         $form = $this->createForm(ScreenContentType::class, $screenContent);
@@ -66,7 +66,7 @@ class ScreenContentController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_back_screen_content_delete', methods: ['POST'])]
+    #[Route('/screencontent/{id}/delete', name: 'app_back_screen_content_delete', methods: ['POST'])]
     public function delete(Request $request, ScreenContent $screenContent, ScreenContentRepository $screenContentRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$screenContent->getId(), $request->request->get('_token'))) {
