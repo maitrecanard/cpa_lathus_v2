@@ -3,12 +3,14 @@
 namespace App\Controller\Back;
 
 use App\Entity\ScreenContent;
+use App\Entity\ScreenParam;
 use App\Form\ScreenContentType;
+use App\Repository\ScreenParamRepository;
 use App\Repository\ScreenContentRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/admin')]
 class ScreenContentController extends AbstractController
@@ -21,8 +23,18 @@ class ScreenContentController extends AbstractController
         ]);
     }
 
-    #[Route('/screencontent/new', name: 'app_back_screen_content_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ScreenContentRepository $screenContentRepository): Response
+    #[Route('/screencontent/selectparam', name:'screen_param_select', methods:['GET'])]
+    public function select(ScreenParamRepository $screenParamRepository)
+    {
+        $screen = $screenParamRepository->findAll();
+
+        return $this->render('back/screen_content/select.html.twig', [
+            'param' => $screen
+        ]);
+    }
+
+    #[Route('/screencontent/{id}/new', name: 'app_back_screen_content_new', methods: ['GET', 'POST'])]
+    public function new(ScreenParam $screenParam, Request $request, ScreenContentRepository $screenContentRepository): Response
     {
         $screenContent = new ScreenContent();
         $form = $this->createForm(ScreenContentType::class, $screenContent);

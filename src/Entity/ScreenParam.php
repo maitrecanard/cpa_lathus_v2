@@ -61,6 +61,9 @@ class ScreenParam
     #[ORM\OneToMany(mappedBy: 'screenParam', targetEntity: ScreenContent::class, orphanRemoval: true)]
     private Collection $screenContents;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $config = null;
+
     public function __construct()
     {
         $this->screenContents = new ArrayCollection();
@@ -265,6 +268,18 @@ class ScreenParam
                 $screenContent->setScreenParam(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getConfig(): ?string
+    {
+        return $this->config;
+    }
+
+    public function setConfig(string $config): self
+    {
+        $this->config = $config;
 
         return $this;
     }

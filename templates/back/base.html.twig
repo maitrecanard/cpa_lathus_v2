@@ -61,19 +61,19 @@
             </li>#}
 
             <!-- Divider -->
-            {#<hr class="sidebar-divider">
+            <hr class="sidebar-divider">
             <div class="sidebar-heading">
-                Messagerie
+                Ecran
             </div>
              <li class="nav-item">
-                <a class="nav-link {{ (app.request.attributes.get('app_back_mail_index')) ? 'active' : '' }}" href="{{ path('app_back_mail_index') }}">
+                <a class="nav-link " href="{{ path('screen_param_select') }}">
                     <i class="fas fa-envelope"></i>
-                    <span>Courriers</span></a>
+                    <span>Nouvel écran</span></a>
             </li>
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            {#<div class="sidebar-heading">
                 Catalogue
             </div>
 
@@ -172,7 +172,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        {#<li class="nav-item dropdown no-arrow d-sm-none">
+                        <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
@@ -193,7 +193,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </li>#}
+                        </li>
 
                         <!-- Nav Item - Alerts -->
                         {#<li class="nav-item dropdown no-arrow mx-1">
@@ -283,12 +283,12 @@
                                 <a class="dropdown-item" href="{{ path('app_back_historical_movement', {id: app.user.id}) }}">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Historique d'activité
-                                </a>
+                                </a>#}
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Déconnexion
-                                </a>#}
+                                </a>
                             </div>
                         </li>
 
