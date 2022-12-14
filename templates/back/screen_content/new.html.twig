@@ -5,7 +5,7 @@
 {% block body %}
     <h1 class="h3 mb-0 text-gray-800">Création d'un nouvel écran</h1>
   </div>
-    <img width="800px" src="{{ asset('assets/images/' ~ screenParam.image) }}">
+    <div style="width:100%;height:100vh;background:url('{{ asset('assets/images/' ~ screenParam.image) }}')center center/cover;"></div>
     {{ include('back/screen_content/_form.html.twig') }}
 
     <a href="{{ path('app_back_screen_content_index') }}">back to list</a>
