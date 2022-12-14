@@ -14,6 +14,7 @@ class ScreenParamType extends AbstractType
         $builder
             ->add('name')
             ->add('description')
+            ->add('config')
             ->add('image')
             ->add('setting1')
             ->add('setting2')

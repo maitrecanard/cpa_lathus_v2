@@ -2,8 +2,9 @@
 
 namespace App\Controller\Back;
 
-use App\Entity\ScreenContent;
 use App\Entity\ScreenParam;
+use App\Entity\ScreenContent;
+use App\Form\ScreenSelectType;
 use App\Form\ScreenContentType;
 use App\Repository\ScreenParamRepository;
 use App\Repository\ScreenContentRepository;
@@ -26,7 +27,7 @@ class ScreenContentController extends AbstractController
     #[Route('/screencontent/selectparam', name:'screen_param_select', methods:['GET'])]
     public function select(ScreenParamRepository $screenParamRepository)
     {
-        $screen = $screenParamRepository->findAll();
+        $screen = $screenParamRepository->findBy(['active'=>1]);
 
         return $this->render('back/screen_content/select.html.twig', [
             'param' => $screen
@@ -47,6 +48,7 @@ class ScreenContentController extends AbstractController
         }
 
         return $this->renderForm('back/screen_content/new.html.twig', [
+            'screenParam' => $screenParam,
             'screen_content' => $screenContent,
             'form' => $form,
         ]);
