@@ -15,7 +15,7 @@ class ScreenContentType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Titre de l\'écran'
+                'label' => 'Nom de l\'écran'
             ])
             ->add('content', TextareaType::class, [
                 'label' => 'Contenu',
