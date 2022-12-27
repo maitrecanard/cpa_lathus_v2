@@ -17,10 +17,13 @@ class ScreenContentType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Nom de l\'écran'
+                'label' => 'Nom de l\'écran',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('content', TextareaType::class, [
-                'label' => 'Contenu',
+                'label' => 'Autre information',
                 'attr' => [
                     'class' => 'tinymce'
                 ]
@@ -86,17 +89,24 @@ class ScreenContentType extends AbstractType
             ])
             ->add('start', DateType::class, [
                 'label' => 'Date de début',
-
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('end', DateType::class, [
                 'label' => 'Date de fin',
-
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('activ', ChoiceType::class, [
                 'choices' => [
                     '' => null,
                     'Oui' => 1,
                     'Non' => 0
+                ],
+                'attr' => [
+                    'class' => 'form-control'
                 ]
             ])
         ;
