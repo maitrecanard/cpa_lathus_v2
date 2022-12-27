@@ -3,18 +3,18 @@
 {% block title %}Hello MainController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/cpa_lathus_v2/src/Controller/Back/MainController.php'|file_link(0) }}">src/Controller/Back/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/cpa_lathus_v2/templates/back/main/index.html.twig'|file_link(0) }}">templates/back/main/index.html.twig</a></code></li>
-    </ul>
-</div>
+  <div class="col-lg-6">
+<div class="card mb-4 py-3 border-left-primary">
+                                <div class="card-body" style ="text-align:center;">
+                                    Etats des écrans 0 actif / 0 inactif
+                                </div>
+                            </div>
+                            </div>
+                              <div class="col-lg-6">
+<div class="card mb-4 py-3 border-left-info">
+                                <div class="card-body"  style ="text-align:center;">
+                                   Mise à jour
+                                </div>
+                            </div>
+                                </div>
 {% endblock %}
