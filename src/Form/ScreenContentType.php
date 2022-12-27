@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\ScreenContent;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -80,6 +82,21 @@ class ScreenContentType extends AbstractType
                 'label' => 'Valeur 10',
                 'attr' => [
                     'class' => 'tinymce'
+                ]
+            ])
+            ->add('start', DateType::class, [
+                'label' => 'Date de début',
+
+            ])
+            ->add('end', DateType::class, [
+                'label' => 'Date de fin',
+
+            ])
+            ->add('activ', ChoiceType::class, [
+                'choices' => [
+                    '' => null,
+                    'Oui' => 1,
+                    'Non' => 0
                 ]
             ])
         ;

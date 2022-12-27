@@ -13,9 +13,13 @@ class MainController extends AbstractController
     #[Route('/', name: 'app_back_main', methods:['GET'])]
     public function index(ScreenContentRepository $screenContentRepository): Response
     {
+        $activ = $screenContentRepository->findBy(['activ' => 1]);
+        $inactiv = $screenContentRepository->findBy(['activ' => 0]);
+        $screenActiv = count($activ);
+        $screenInactiv = count($inactiv);
         return $this->render('back/main/index.html.twig', [
-            'screenactive' => $screenContentRepository->findBy(['activ' => 1]),
-            'screeninactive' => $screenContentRepository->findBy(['activ' => 0]),
+            'screenactive' => $screenActiv,
+            'screeninactive' => $screenInactiv,
         ]);
     }
 }

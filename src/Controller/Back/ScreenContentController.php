@@ -42,6 +42,8 @@ class ScreenContentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $screenContent->setCreatedAt(new \DateTimeImmutable());
+            $screenContent->setScreenParam($screenParam);
             $screenContentRepository->save($screenContent, true);
 
             return $this->redirectToRoute('app_back_screen_content_index', [], Response::HTTP_SEE_OTHER);
