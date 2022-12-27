@@ -2,9 +2,9 @@
     {{ form_label(form.title) }}
     {{ form_widget(form.title) }}
     {% if screenParam is defined %}
-        <div style="position:relative;width:2200px;height:1500px;background:url('{{ asset('assets/images/' ~ screenParam.image) }}')center center/cover;">
+        <div style="position:relative;width:100%;height:80vh;background:url('{{ asset('assets/images/' ~ screenParam.image) }}')center center/cover;">
     {% else %}
-        <div style="position:relative;width:2200px;height:1500px;background:url('{{ asset('assets/images/' ~ screen_content.screenParam.image) }}')center center/cover;">
+        <div style="position:relative;width:100%;height:80vh;background:url('{{ asset('assets/images/' ~ screen_content.screenParam.image) }}')center center/cover;">
     {% endif %}
     <div style="{% if screenParam is defined  %}{{ screenParam.setting1 }}{% else %}{{ screen_content.screenParam.setting1 }}{% endif %}">
         {{ form_widget(form.value1) }}

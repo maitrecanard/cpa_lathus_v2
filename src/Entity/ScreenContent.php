@@ -19,10 +19,10 @@ class ScreenContent
     #[ORM\Column(length: 90)]
     private ?string $title = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $content = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $value1 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
