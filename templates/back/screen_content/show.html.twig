@@ -5,6 +5,14 @@
 {% block body %}
     <h1 class="h3 mb-0 text-gray-800">Ecran  {{ screen_content.title }} n° {{ screen_content.id }}</h1>
 </div>
+    <a href="{{ path('app_back_screen_content_index') }}"class="btn btn-secondary btn-icon-split mb-4">
+    <span class="icon text-white-50">
+        <i class="fas fa-arrow-right"></i>
+    </span>
+    <span class="text">Retour à la liste</span>
+</a>
+<div class="card shadow mb-4">
+    <div class="card-body">
    <div style="margin-bottom:2em;">Ecran actuellement {{screen_content.activ ? 'En ligne' : 'hors ligne'}} 
         {% if screen_content.start == true %}
             début d'affichage le  {{ screen_content.start ? screen_content.start|date('d/m/Y') : '' }} fin d'affichage {{ screen_content.end ? screen_content.end|date('d/m/Y') : '' }}</div>
@@ -22,10 +30,19 @@
             <div style="{{ screen_content.screenParam.setting10 }}">{{ screen_content.value10|raw }}</div>
          </div>
 
+   </div>
+       <a href="{{ path('app_back_screen_content_edit', {'id': screen_content.id}) }}"class="btn btn-warning btn-icon-split mb-3">
+                                        <span class="icon text-white-50">
+                                           <i class="fas fa-arrow-right"></i>
+                                        </span>
+                                        <span class="text">Editer</span>
+                                    </a>
+</div>
 
-    <a href="{{ path('app_back_screen_content_index') }}">back to list</a>
 
-    <a href="{{ path('app_back_screen_content_edit', {'id': screen_content.id}) }}">edit</a>
+
+
+
 
     {{ include('back/screen_content/_delete_form.html.twig') }}
 {% endblock %}
