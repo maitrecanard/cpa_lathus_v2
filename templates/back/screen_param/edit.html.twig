@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ScreenParam{% endblock %}
+
+{% block body %}
+    <h1>Edit ScreenParam</h1>
+
+    {{ include('back/screen_param/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_back_screen_param_index') }}">back to list</a>
+
+    {{ include('back/screen_param/_delete_form.html.twig') }}
+{% endblock %}

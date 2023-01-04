@@ -1,0 +1,17 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}New ScreenContent{% endblock %}
+
+{% block body %}
+    <h1 class="h3 mb-0 text-gray-800">Création d'un nouvel écran</h1>
+  </div>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+    
+    {{ include('back/screen_content/_form.html.twig') }}
+  </div>
+</div>
+
+
+    <a href="{{ path('app_back_screen_content_index') }}">back to list</a>
+{% endblock %}

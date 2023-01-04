@@ -1,0 +1,20 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+  <div class="col-lg-6">
+<div class="card mb-4 py-3 border-left-primary">
+                                <div class="card-body" style ="text-align:center;">
+                                    Etats des écrans {{ screenactive }} actif / {{ screeninactive }} inactif
+                                </div>
+                            </div>
+                            </div>
+                              <div class="col-lg-6">
+<div class="card mb-4 py-3 border-left-info">
+                                <div class="card-body"  style ="text-align:center;">
+                                   Mise à jour
+                                </div>
+                            </div>
+                                </div>
+{% endblock %}

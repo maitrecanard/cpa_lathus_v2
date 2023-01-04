@@ -1,0 +1,13 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}ScreenContent index{% endblock %}
+
+{% block body %}
+<h1 class="h3 mb-0 text-gray-800">Sélectionner l'écran à générer</h1>
+  </div>
+{% for conf in param %}
+
+    <a href="{{ path('app_back_screen_content_new', {id: conf.id}) }}"><img width="350px" src="{{ asset('assets/images/' ~ conf.image) }}"></a>
+
+{% endfor %}
+{% endblock %}
