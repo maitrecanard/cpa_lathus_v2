@@ -109,7 +109,7 @@ class MailerController extends AbstractController
             //->bcc($exploit->getMail())
             //->replyTo('crossfitdaemon@gmail.com')
             //->priority(Email::PRIORITY_HIGH)
-            ->subject('Votre compte sur crossfitdaemon.fr')
+            ->subject('Installation du site '.$exploit->getName())
             ->htmlTemplate('mail/mailer/mailNewInstall.html.twig')
             ->context([
                 'nameExploit' => $exploit->getName(),

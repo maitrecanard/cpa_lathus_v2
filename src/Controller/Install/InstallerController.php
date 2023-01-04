@@ -21,7 +21,7 @@ class InstallerController extends AbstractController
     public function newExploitant(Request $request, ExploitantRepository $exploitantRepository): Response
     {
         $exploit =  $exploitantRepository->find(1);
-        if($exploit->getid())
+        if($exploit != NULL)
         {
             return $this->redirectToRoute('login');
         }
