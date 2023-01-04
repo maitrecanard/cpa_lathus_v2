@@ -5,6 +5,7 @@ namespace App\Controller\Mail;
 use App\Entity\Messages;
 use App\Entity\User;
 use App\Repository\ExploitantRepository;
+use App\Service\Error;
 use Symfony\Component\Mime\Email;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
@@ -18,10 +19,11 @@ class MailerController extends AbstractController
     private $mailer;
     private $exploit;
 
-    public function __construct(MailerInterface $mailer, ExploitantRepository $exploit)
+    public function __construct(MailerInterface $mailer, ExploitantRepository $exploit, Error $error)
     {
         $this->mailer = $mailer;
         $this->exploit = $exploit;
+        $this->error = $error;
     }
 
     #[Route('/email/visitor')]
@@ -114,8 +116,16 @@ class MailerController extends AbstractController
             ]);
         try {
             $this->mailer->send($email);
+            $this->addFlash(
+                'success',
+                'Installation réalisé avec succès'
+            );
         }  catch (TransportExceptionInterface $e) {
-            
+            $this->addFlash(
+                'danger',
+                'Erreur lors de l\'envoi du mail de confirmation'.$e
+            );
+            $this->error->error('sendEmailNewInstall',$e);
         }
         
     }
