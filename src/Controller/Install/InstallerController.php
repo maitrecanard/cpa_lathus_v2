@@ -45,7 +45,7 @@ class InstallerController extends AbstractController
     public function newUser(Request $request, UserRepository $userRepository, MailerController $mailer, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserInstallType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

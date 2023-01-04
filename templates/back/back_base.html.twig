@@ -76,43 +76,7 @@
                     <span>Liste d'écrans</span></a>
             </li>
             <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            {#<div class="sidebar-heading">
-                Catalogue
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Produits</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Paramétrage des produits</h6>
-                        <a class="collapse-item" href="{{ path('app_back_categories_index') }}">Catégories</a>
-                        <a class="collapse-item" href="{{ path('app_back_products_index') }}">Produits</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-                        <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Point de vente
-            </div>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_back_partner_index') }}">
-                    <i class="fas fa-shopping-basket"></i>
-                    <span>Partenaires</span></a>
-            </li>
-            <hr class="sidebar-divider">
+ 
                         <!-- Heading -->
             <div class="sidebar-heading">
                 Paramétrage du site
@@ -124,24 +88,16 @@
                     <i class="fas fa-user-edit"></i>
                     <span>Utilisateurs</span></a>
             </li>
-
-                        <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_back_pages_index') }}">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Pages</span></a>
+            <hr class="sidebar-divider">
+            <li class="nav-item">
+             <a class="dropdown-item" href="{{ path('logout') }}" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Déconnexion
+                                </a>
             </li>
+            
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-
-    #}
+   
         </ul>
         <!-- End of Sidebar -->
 
