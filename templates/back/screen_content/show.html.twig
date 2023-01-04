@@ -17,17 +17,17 @@
         {% if screen_content.start == true %}
             début d'affichage le  {{ screen_content.start ? screen_content.start|date('d/m/Y') : '' }} fin d'affichage {{ screen_content.end ? screen_content.end|date('d/m/Y') : '' }}</div>
         {% endif %}
-         <div style="position:relative;width:2200px;height:1500px;background:url('{{ asset('assets/images/' ~ screen_content.screenParam.image) }}')center center/cover;">
-            <div style="{{ screen_content.screenParam.setting1 }}">{{ screen_content.value1|raw }}</div>
-            <div style="{{ screen_content.screenParam.setting2 }}">{{ screen_content.value2|raw }}</div>
-            <div style="{{ screen_content.screenParam.setting3 }}">{{ screen_content.value3|raw }}</div>
-            <div style="{{ screen_content.screenParam.setting4 }}">{{ screen_content.value4|raw }}</div>
-            <div style="{{ screen_content.screenParam.setting5 }}">{{ screen_content.value5|raw }}</div>
-            <div style="{{ screen_content.screenParam.setting6 }}">{{ screen_content.value6|raw }}</div>
-            <div style="{{ screen_content.screenParam.setting7 }}">{{ screen_content.value7|raw }}</div>
-            <div style="{{ screen_content.screenParam.setting8 }}">{{ screen_content.value8|raw }}</div>
-            <div style="{{ screen_content.screenParam.setting9 }}">{{ screen_content.value9|raw }}</div>
-            <div style="{{ screen_content.screenParam.setting10 }}">{{ screen_content.value10|raw }}</div>
+         <div style="position:relative;width:100%;height:80vh;background:url('{{ asset('assets/images/' ~ screen_content.screenParam.image) }}')center center/cover;">
+            <div style="position:absolute;{{ screen_content.screenParam.setting1 }}">{{ screen_content.value1|raw }}</div>
+            <div style="position:absolute;{{ screen_content.screenParam.setting2 }}">{{ screen_content.value2|raw }}</div>
+            <div style="position:absolute;{{ screen_content.screenParam.setting3 }}">{{ screen_content.value3|raw }}</div>
+            <div style="position:absolute;{{ screen_content.screenParam.setting4 }}">{{ screen_content.value4|raw }}</div>
+            <div style="position:absolute;{{ screen_content.screenParam.setting5 }}">{{ screen_content.value5|raw }}</div>
+            <div style="position:absolute;{{ screen_content.screenParam.setting6 }}">{{ screen_content.value6|raw }}</div>
+            <div style="position:absolute;{{ screen_content.screenParam.setting7 }}">{{ screen_content.value7|raw }}</div>
+            <div style="position:absolute;{{ screen_content.screenParam.setting8 }}">{{ screen_content.value8|raw }}</div>
+            <div style="position:absolute;{{ screen_content.screenParam.setting9 }}">{{ screen_content.value9|raw }}</div>
+            <div style="position:absolute;{{ screen_content.screenParam.setting10 }}">{{ screen_content.value10|raw }}</div>
          </div>
 
    </div>

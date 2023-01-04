@@ -8,38 +8,52 @@
     {% else %}
         <div style="margin-bottom:1.5em;position:relative;width:100%;height:80vh;background:url('{{ asset('assets/images/' ~ screen_content.screenParam.image) }}')center center/cover;">
     {% endif %}
-    <div style="{% if screenParam is defined  %}{{ screenParam.setting1 }}{% else %}{{ screen_content.screenParam.setting1 }}{% endif %}">
+    <div style="position:absolute;{% if screenParam is defined  %}{{ screenParam.setting1 }}{% else %}{{ screen_content.screenParam.setting1 }}{% endif %}">
         {{ form_widget(form.value1) }}
    </div>
-    <div style="{% if screenParam is defined  %}{{ screenParam.setting2 }}{% else %}{{ screen_content.screenParam.setting2 }}{% endif %}">
+    <div style="position:absolute;{% if screenParam is defined  %}{{ screenParam.setting2 }}{% else %}{{ screen_content.screenParam.setting2 }}{% endif %}">
         {{ form_widget(form.value2) }}
    </div>
-    <div style="{% if screenParam is defined  %}{{ screenParam.setting3 }}{% else %}{{ screen_content.screenParam.setting3 }}{% endif %}">
+    <div style="position:absolute;{% if screenParam is defined  %}{{ screenParam.setting3 }}{% else %}{{ screen_content.screenParam.setting3 }}{% endif %}">
         {{ form_widget(form.value3) }}
    </div>
-       <div style="{% if screenParam is defined  %}{{ screenParam.setting4 }}{% else %}{{ screen_content.screenParam.setting4 }}{% endif %}">
+       <div style="position:absolute;{% if screenParam is defined  %}{{ screenParam.setting4 }}{% else %}{{ screen_content.screenParam.setting4 }}{% endif %}">
         {{ form_widget(form.value4) }}
    </div>
-       <div style="{% if screenParam is defined  %}{{ screenParam.setting5 }}{% else %}{{ screen_content.screenParam.setting5 }}{% endif %}">
+       <div style="position:absolute;{% if screenParam is defined  %}{{ screenParam.setting5 }}{% else %}{{ screen_content.screenParam.setting5 }}{% endif %}">
         {{ form_widget(form.value5) }}
    </div>
-       <div style="{% if screenParam is defined  %}{{ screenParam.setting6 }}{% else %}{{ screen_content.screenParam.setting6 }}{% endif %}">
+       <div style="position:absolute;{% if screenParam is defined  %}{{ screenParam.setting6 }}{% else %}{{ screen_content.screenParam.setting6 }}{% endif %}">
         {{ form_widget(form.value6) }}
    </div>
-       <div style="{% if screenParam is defined   %}{{ screenParam.setting7}}{% else %}{{ screen_content.screenParam.setting7 }}{% endif %}">
+       <div style="position:absolute;{% if screenParam is defined   %}{{ screenParam.setting7}}{% else %}{{ screen_content.screenParam.setting7 }}{% endif %}">
         {{ form_widget(form.value7) }}
    </div>
-       <div style="{% if screenParam is defined  %}{{ screenParam.setting8 }}{% else %}{{ screen_content.screenParam.setting8 }}{% endif %}">
+       <div style="position:absolute;{% if screenParam is defined  %}{{ screenParam.setting8 }}{% else %}{{ screen_content.screenParam.setting8 }}{% endif %}">
         {{ form_widget(form.value8) }}
    </div>
-       <div style="{% if screenParam is defined  %}{{ screenParam.setting9 }}{% else %}{{ screen_content.screenParam.setting9 }}{% endif %}">
+       <div style="position:absolute;{% if screenParam is defined  %}{{ screenParam.setting9 }}{% else %}{{ screen_content.screenParam.setting9 }}{% endif %}">
         {{ form_widget(form.value9) }}
    </div>
-       <div style="{% if screenParam is defined  %}{{ screenParam.setting10 }}{% else %}{{ screen_content.screenParam.setting10 }}{% endif %}">
+       <div style="position:absolute;{% if screenParam is defined  %}{{ screenParam.setting10 }}{% else %}{{ screen_content.screenParam.setting10 }}{% endif %}">
         {{ form_widget(form.value10) }}
    </div>
    </div>
-   {{ form_label(form.content) }}
+   <div style="margin-top:1em;">
+      {{ form_label(form.content) }}
       {{ form_widget(form.content) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    </div>
+    <div style="margin-top:1em;">
+      {{ form_label(form.start) }}
+      {{ form_widget(form.start) }}
+    </div>
+    <div style="margin-top:1em;">
+      {{ form_label(form.end) }}
+      {{ form_widget(form.end) }}
+    </div>
+        <div style="margin-top:1em;">
+      {{ form_label(form.activ) }}
+      {{ form_widget(form.activ) }}
+    </div>
+    <button class="btn btn-success" style="margin-top:1em;">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}

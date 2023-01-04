@@ -88,6 +88,14 @@
                     <i class="fas fa-user-edit"></i>
                     <span>Utilisateurs</span></a>
             </li>
+            {% if is_granted('ROLE_SUPADMIN') %}
+                        <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_back_screen_param_index') }}">
+                    <i class="fas fa-user-edit"></i>
+                    <span>Paramétrage écrans</span></a>
+            </li>
+            {% endif %}
+                        <!-- Nav Item - Tables -->
             <hr class="sidebar-divider">
             <li class="nav-item">
              <a class="dropdown-item" href="{{ path('logout') }}" data-toggle="modal" data-target="#logoutModal">
