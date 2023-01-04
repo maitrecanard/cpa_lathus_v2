@@ -57,7 +57,7 @@ class ScreenParamController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $screenParamRepository->save($screenParam, true);
 
-            return $this->redirectToRoute('app_back_screen_param_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_back_screen_param_edit', ['id'=> $screenParam->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/screen_param/edit.html.twig', [
