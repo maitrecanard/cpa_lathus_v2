@@ -79,7 +79,7 @@ class MailerController extends AbstractController
         $role = $user->getRoles(['role']);
         $url = $_SERVER['SERVER_NAME'];
         $email = (new TemplatedEmail())
-            ->from('message@crossfitdaemon.fr')
+            ->from('message@mathieusiaudeau.fr')
             ->to($address)
             //->cc('cc@example.com')
             //->bcc($exploit->getMail())
