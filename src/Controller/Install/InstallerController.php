@@ -2,6 +2,7 @@
 
 namespace App\Controller\Install;
 
+use App\Controller\Mail\MailerController;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,29 +11,55 @@ use App\Repository\ExploitantRepository;
 use App\Entity\Exploitant;
 use App\Entity\User;
 use App\Form\ExploitantType;
+use App\Form\UserType;
 use App\Repository\UserRepository;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class InstallerController extends AbstractController
 {
     #[Route('/install', name: 'app_install')]
-    public function new(Request $request, ExploitantRepository $exploitantRepository, UserRepository $userRepository): Response
+    public function newExploitant(Request $request, ExploitantRepository $exploitantRepository): Response
     {
         $exploitant = new Exploitant();
-                    $user = new User();
         $form = $this->createForm(ExploitantType::class, $exploitant);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user = new User();
-            $user->getRoles(["ROLE_SUPERADMIN"]);
+
             $exploitantRepository->save($exploitant, true);
-            $userRepository->save($user, true);
-            return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
+
+            return $this->redirectToRoute('app_install_user', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('back/exploitant/new.html.twig', [
-            'exploitant' => $exploitant,
+        return $this->renderForm('install/installer/index.html.twig', [
+
             'form' => $form,
         ]);
     }
+    #[Route('/install/user', name: 'app_install_user')]
+    public function newUser(Request $request, UserRepository $userRepository, MailerController $mailer, UserPasswordHasherInterface $userPasswordHasher): Response
+    {
+        $user = new User();
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user->setRoles(["ROLE_SUPADMIN"]);
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('password')->getData()
+                )
+            );
+            $userRepository->save($user, true);
+            $mailer->sendEmailNewInstall();
+            return $this->redirectToRoute('login', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('install/installer/index.html.twig', [
+
+            'form' => $form,
+        ]);
+    }
+
 }
