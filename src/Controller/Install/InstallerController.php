@@ -20,6 +20,11 @@ class InstallerController extends AbstractController
     #[Route('/install', name: 'app_install')]
     public function newExploitant(Request $request, ExploitantRepository $exploitantRepository): Response
     {
+        $exploit =  $exploitantRepository->find(1);
+        if($exploit->getid())
+        {
+            return $this->redirectToRoute('login');
+        }
         $exploitant = new Exploitant();
         $form = $this->createForm(ExploitantType::class, $exploitant);
         $form->handleRequest($request);
