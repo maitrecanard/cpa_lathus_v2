@@ -3,7 +3,7 @@ const slider =  {
     init: function() {
         console.log('slider charged');
         slider.slider();
-        setInterval(slider.slider, 2400000);
+        setInterval(slider.slider, 86400000);
     },
 
     slider: function() {
