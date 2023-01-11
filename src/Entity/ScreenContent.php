@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 #[ORM\Entity(repositoryClass: ScreenContentRepository::class)]
 class ScreenContent
@@ -23,36 +25,47 @@ class ScreenContent
     private ?string $content = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value1 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value2 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value3 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value4 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value5 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value6 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value7 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value8 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value9 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $value10 = null;
 
     #[ORM\ManyToOne(inversedBy: 'screenContents')]
+    #[Groups(['screen_api'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?ScreenParam $screenParam = null;
 

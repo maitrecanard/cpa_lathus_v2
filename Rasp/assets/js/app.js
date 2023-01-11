@@ -1,8 +1,12 @@
 const app = {
+
+    httpHeaders: new Headers(),
+
     init: function() {
 
-        slider.init();
         loader.init();
+        slider.init();
+        app.httpHeaders.append("Content-Type", "application/json");
     }
 }
 

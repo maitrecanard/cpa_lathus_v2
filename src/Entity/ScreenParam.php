@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ScreenParamRepository::class)]
 class ScreenParam
@@ -23,36 +24,47 @@ class ScreenParam
     private ?string $description = null;
 
     #[ORM\Column(length: 20)]
+    #[Groups(['screen_api'])]
     private ?string $image = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting1 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting2 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting3 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting4 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting5 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting6 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting7 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting8 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting9 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['screen_api'])]
     private ?string $setting10 = null;
 
     #[ORM\Column(nullable: true)]

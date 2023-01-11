@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ScreenMovementRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
 #[ORM\Entity(repositoryClass: ScreenMovementRepository::class)]
 class ScreenMovement
 {
